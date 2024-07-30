@@ -36,6 +36,7 @@
             <div class="form-group">
                 <label for="productType">Type Switcher</label>
                 <select id="productType" name="productType" required>
+                    <option value="type">TypeSwitcher</option>
                     <option value="DVD">DVD</option>
                     <option value="Book">Book</option>
                     <option value="Furniture">Furniture</option>
