@@ -25,12 +25,14 @@
           <div class="products">
 
           <?php
-           echo '<link rel="stylesheet" type="text/css" href="./styles/styleP.css">';
-             require('database.php');
-             $db = new Database();
-             $db->displayPrFromDb();
-
-            echo '<link rel="stylesheet" type="text/css" href="./styles/styleP.css">';
+         
+           require_once('./productHandle/ProductManager.php');
+           require_once('./productHandle/database.php');
+           $db = new Database();
+           $manager = new ProductManager($db);
+           $manager->displayProducts();
+        
+            
           ?>
           </div>
            </form>
