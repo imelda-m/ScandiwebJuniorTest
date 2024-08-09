@@ -28,11 +28,6 @@ class Furniture extends Product {
     
     }
     
-
-    public function renderDetails() {
-        return '<p>Dimensions: ' . $this->height . 'x' . $this->width . 'x' . $this->length . '</p>';
-    }
-
     public static function createFromForm($formData) {
         
         return new self(
