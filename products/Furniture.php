@@ -21,9 +21,7 @@ class Furniture extends Product {
         
         return [
            'Dimensions' => $this->height . 'x' . $this->width . 'x' . $this->length
-        //    'height' => $this->height,
-        //    'width' => $this->width,
-        //    'length' => $this->length,
+       
         ];
     
     }
