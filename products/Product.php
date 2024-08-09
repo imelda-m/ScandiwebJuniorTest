@@ -1,36 +1,35 @@
 <?php
 
- abstract class Product{
-
+abstract class Product {
     protected $sku;
     protected $name;
     protected $price;
+    protected $type;
 
-    public function __construct($sku, $name, $price) {
+    public function __construct($sku, $name, $price, $type) {
         $this->sku = $sku;
         $this->name = $name;
         $this->price = $price;
+        $this->type = $type;
     }
 
-    public function &getSKU($args){
-        return $args['sku'];
+    public function getSku() {
+        return $this->sku;
     }
 
-    public function &getName($args){
-        return $args['name'];
+    public function getName() {
+        return $this->name;
     }
 
-    public function &getPrice($args){
-        return $args['price'];
-    }
-    public function &getTpeSwitcher($args){
-        return $args['productType'];
+    public function getPrice() {
+        return $this->price;
     }
 
+    public function getType() {
+        return $this->type;
+    }
 
-    protected abstract function displayP($row);
-    //abstract public function save();
- }
-
+    abstract public function getDetails();
+}
 
 ?>
