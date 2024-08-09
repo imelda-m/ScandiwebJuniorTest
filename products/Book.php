@@ -1,29 +1,25 @@
-<?php 
-     require_once 'Product.php';
+<?php
+require_once 'Product.php';
 
-     class Book extends Product{
-        private $weight;
+class Book extends Product {
+    private $weight;
 
-        public function __construct($sku, $name, $price, $weight) {
-            parent::__construct($sku, $name, $price);
-            $this->weight = $weight;
-        }
+    public function __construct($sku, $name, $price, $weight) {
+        parent::__construct($sku, $name, $price, 'Book');
+        $this->weight = $weight;
+    }
+
+    public function getDetails() {
+        return [
+            'weight' => $this->weight . ' Kg'
+        ];
+    }
+   
     
-        public function &getWeight($args){
-             return $args['weight'];
-        }
-
-
-        public function displayP($row){
-            echo <<< PRODUCT
-                <div class='product'>
-                    <input class='delete-checkbox' type='checkbox' name='deleteCheckbox[]' value={$row['sku']}>
-                    <span>{$row['sku']}</span>
-                    <span>{$row['name']}</span>
-                    <span>{$row['weight']} KG</span> 
-                </div>
-            PRODUCT;  
-        }
-     }
+    
+    public static function createFromForm($formData) {
+        return new self($formData['skuInput'], $formData['nameInput'], $formData['price'], $formData['weight']);
+    }
+}
 
 ?>
