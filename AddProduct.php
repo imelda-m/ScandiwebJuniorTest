@@ -63,10 +63,11 @@
 
            
             <div id="sku-taken-values-container">
-                <?php
-                    require('database.php');
+               <?php
+                    require('./productHandle/database.php');
+                    require('./productHandle/ProductManager.php');
                     $database = new Database();
-                   //$database-> outputSKUTakenVlaues();
+                    $manager = new ProductManager($database);
                 ?>
             </div>
         </form>
